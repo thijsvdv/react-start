@@ -3,16 +3,18 @@
 */
 import React from 'react'
 
-class Team extends React.Component {
+const Team = () => {
+  return {
 
-  render() {
-    return (
-      <div className="">
-        <h1>Team</h1>
-      </div>
-    )
+    render() {
+      return (
+        <div className="">
+          <h1>Team</h1>
+        </div>
+      )
+    }
+ 
   }
-
 }
 
 export default Team;
