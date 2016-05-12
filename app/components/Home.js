@@ -38,7 +38,8 @@ const Home = () => {
   return {
 
     renderPost(key) {
-      return <li key={key}><Link to={`/post/${key}`}>{this.props.posts[key].title}</Link></li>
+      console.log('posts', this.props.posts);
+      return <li key={key}><Link to={`/post/${key}`}>{this.props.posts[key].fields.title}</Link></li>
     },
 
     render() {
