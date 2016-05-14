@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function Events({events}) {
-  // console.log(events);
-  
+function Events ({events}) {
+
   let renderEvent = (key) => {
     let event = events[key].fields;
     // console.log(event);
@@ -13,7 +12,7 @@ function Events({events}) {
       </li>
     )
   }
-  
+
   return (
     <div className="events">
       <h1>Events</h1>

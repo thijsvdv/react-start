@@ -5,9 +5,9 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const About = () => {
-  
+
   return {
-    render() {
+    render () {
       return (
         <div className="">
           <h1>About</h1>
@@ -15,7 +15,7 @@ const About = () => {
           {this.props.children}
         </div>
       )
-    } 
+    }
   }
 
 }

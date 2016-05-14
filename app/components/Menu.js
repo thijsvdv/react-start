@@ -12,21 +12,21 @@ injectTapEventPlugin();
 
 class Menu extends React.Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = { open: false };
-    console.log("state", this.state);
+    // console.log('state', this.state);
   }
 
-  handleToggle() {
+  handleToggle () {
     this.setState({open: !this.state.open})
   }
 
-  handleClose() {
+  handleClose () {
     this.setState({open: false});
   }
 
-  render() {
+  render () {
     return (
       <div className="menu">
         <RaisedButton

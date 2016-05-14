@@ -6,10 +6,10 @@ import React from 'react';
 const Post = () => {
   return {
 
-    render() {
+    render () {
       const posts = this.props.posts;
 
-      if(posts[this.props.params.postid] !== undefined) {
+      if (posts[this.props.params.postid] !== undefined) {
         const post = posts[this.props.params.postid].fields;
         // console.log("POST", post);
 

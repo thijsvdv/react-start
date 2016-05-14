@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: 'server.bundle.js'
   },
-  
+
   target: 'node',
 
   // keep node_module paths out of the bundle

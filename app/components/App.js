@@ -8,7 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Navbar from './Navbar'
 
 // require.ensure([], () => {
-    
+
 //     const getMuiTheme = require('material-ui/styles/getMuiTheme');
 //     const MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
 //     const Navbar = require('./Navbar');
@@ -20,12 +20,9 @@ const contentfulClient = contentful.createClient({
   space: 'vox3jqb8t3cq'
 });
 
-// const PRODUCT_CONTENT_TYPE_ID = 'event';
-
-
 class App extends React.Component {
 
-  constructor() {
+  constructor () {
     super();
 
     this.state = {
@@ -35,12 +32,12 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // console.log("Mounted");
     // contentfulClient.getEntries({ skip: 5, limit: 5, order: '-sys.createdAt' })
     // contentfulClient.getContentType('user')
       contentfulClient.getEntries({
-        'content_type': 'event'
+        content_type: 'event'
       })
       .then((entries) => {
         this.setState({
@@ -48,10 +45,10 @@ class App extends React.Component {
         });
         // console.log('this.state', this.state);
       })
-      
+
       contentfulClient.getEntries({
-        'content_type': 'user',
-        'order': 'fields.name,fields.firstName'
+        content_type: 'user',
+        order: 'fields.name,fields.firstName'
       })
       .then((entries) => {
         this.setState({
@@ -59,8 +56,7 @@ class App extends React.Component {
         });
         // console.log('this.state', this.state);
       })
-      
-    
+
     // fetch('http://www.the-aim.be/aimpress/rss', {
     // fetch('http://jsonplaceholder.typicode.com/posts', {
     //   method: 'get'
@@ -82,7 +78,7 @@ class App extends React.Component {
     // });
   }
 
-  render() {
+  render () {
     const children = React.Children.map(this.props.children, (child) => {
       return React.cloneElement(child, {
         events: this.state.events,

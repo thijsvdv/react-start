@@ -5,30 +5,28 @@ const helloFactory = ({ React}) => {
     string,
     func
   } = React.PropTypes;
-  
+
   return function Hello (props) {
-    
+
     // React wants propTypes
     // to be static.
     Hello.propTypes = {
       word: string,
       mode: string,
-      
       actions: React.PropTypes.shape({
         setWord: func.isRequired,
         setMode: func.isRequired
       })
     };
-    
+
     return {
-      
+
       props, // set props
-      
-      componentDidUpdate() {
+      componentDidUpdate () {
         // console.log(this.refs.wordInput);
         this.refs.wordInput.focus();
       },
-      
+
       render () {
         const {
           word,
@@ -55,9 +53,8 @@ const helloFactory = ({ React}) => {
 
           setWord(e.target.value);
           setMode('display');
-          this.render();
         };
-        
+
         return (
           // Fill in the { blanks }
           <p>Hello,&nbsp;
@@ -68,16 +65,16 @@ const helloFactory = ({ React}) => {
             <input
               ref = "wordInput"
               style = { styles.editMode }
-              placeholder =  { word }
+              placeholder = { word }
               onKeyUp = { onKeyUp } />
           </p>
         )
       }
-      
+
     }
-    
+
   }
-  
+
 }
 
 export default helloFactory;

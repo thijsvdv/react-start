@@ -5,7 +5,7 @@ import Menu from './Menu'
 
 const Navbar = () => {
   return {
-    render() {
+    render () {
       return (
         <div className="navbar">
           <Menu />
