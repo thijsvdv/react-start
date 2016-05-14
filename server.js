@@ -54,8 +54,9 @@ function renderPage(appHtml) {
     <!doctype html public="storage">
     <html>
     <meta charset=utf-8/>
-    <title>My First React Router App</title>
-    <link rel=stylesheet href=/index.css>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebApp</title>
+    <link rel=stylesheet href=/styles.css>
     <div id=app>${appHtml}</div>
     <script src="/bundle.js"></script>
   `

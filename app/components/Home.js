@@ -38,19 +38,22 @@ const Home = () => {
   return {
 
     renderPost(key) {
-      console.log('posts', this.props.posts);
-      return <li key={key}><Link to={`/post/${key}`}>{this.props.posts[key].fields.title}</Link></li>
+      console.log('events', this.props.events);
+      const event = this.props.events[key].fields;
+      return <li key={key}><Link to={`/event/${event.slug}`}>{event.title}</Link></li>
     },
 
     render() {
       return (
         <div className="">
-          <h1>React start</h1>
+          <h1>WebApp</h1>
           
           <Hello word={ word } mode={ mode } actions={ actions } />
           
+          <h2>Coming events...</h2>
+          
           <ol>
-          {Object.keys(this.props.posts).map(this.renderPost.bind(this))}
+          {Object.keys(this.props.events).map(this.renderPost.bind(this))}
           </ol>
         </div>
       )

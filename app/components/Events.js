@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function Events({posts}) {
-  // console.log(posts);
+function Events({events}) {
+  // console.log(events);
   
   let renderEvent = (key) => {
-    let event = posts[key].fields;
-    console.log(event);
+    let event = events[key].fields;
+    // console.log(event);
     return (
       <li key={key}>
         <Link to={`/event/${event.slug}`}>{event.date} - {event.title}</Link>
@@ -18,7 +18,7 @@ function Events({posts}) {
     <div className="events">
       <h1>Events</h1>
       <ol>
-      {Object.keys(posts).map(renderEvent.bind(this))}
+      {Object.keys(events).map(renderEvent.bind(this))}
       </ol>
     </div>
   )

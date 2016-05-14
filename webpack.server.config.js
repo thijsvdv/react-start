@@ -1,5 +1,6 @@
 var fs = require('fs')
 var path = require('path')
+var autoprefixer = require('autoprefixer')
 
 module.exports = {
 
@@ -8,7 +9,7 @@ module.exports = {
   output: {
     filename: 'server.bundle.js'
   },
-
+  
   target: 'node',
 
   // keep node_module paths out of the bundle
@@ -26,7 +27,24 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=es2015&presets[]=react'
+      },
+      {
+        test: /\.css$/,
+        // include: __dirname + '/app/styles',
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader!postcss-loader'
+      }
+    ]
+  },
+
+  postcss: function () {
+    return [
+      autoprefixer({ browsers: ['last 4 versions'] }),
+      require('postcss-nested')
     ]
   }
 

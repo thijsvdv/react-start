@@ -3,7 +3,17 @@
 */
 import React from 'react'
 import contentful from 'contentful'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Navbar from './Navbar'
+
+// require.ensure([], () => {
+    
+//     const getMuiTheme = require('material-ui/styles/getMuiTheme');
+//     const MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
+//     const Navbar = require('./Navbar');
+
+// }, 'navbar');
 
 const contentfulClient = contentful.createClient({
   accessToken: '3504f58d8ba65f1ad9bd4650b5c0ee09ca499f4e65ddd2125446aab5432e0842',
@@ -19,27 +29,22 @@ class App extends React.Component {
     super();
 
     this.state = {
-      posts: [],
-      users: []
+      events: [],
+      users: [],
+      open: false
     }
   }
 
   componentDidMount() {
     // console.log("Mounted");
-      // contentfulClient.getEntries({ skip: 5, limit: 5, order: '-sys.createdAt' })
-      // .then((entries) => {
-      //   console.log('entries', entries);
-      // });
-      // contentfulClient.getContentType('user')
-      // .then((contentType) => {
-      //   console.log('contentType', contentType);
-      // });
+    // contentfulClient.getEntries({ skip: 5, limit: 5, order: '-sys.createdAt' })
+    // contentfulClient.getContentType('user')
       contentfulClient.getEntries({
         'content_type': 'event'
       })
       .then((entries) => {
         this.setState({
-          posts: entries.items
+          events: entries.items
         });
         // console.log('this.state', this.state);
       })
@@ -80,18 +85,20 @@ class App extends React.Component {
   render() {
     const children = React.Children.map(this.props.children, (child) => {
       return React.cloneElement(child, {
-        posts: this.state.posts,
+        events: this.state.events,
         users: this.state.users
       })
     })
 
     return (
-      <div className="">
-        <Navbar />
-        <div>
-          {children}
+      <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <div className="">
+          <Navbar />
+          <div>
+            {children}
+          </div>
         </div>
-      </div>
+      </MuiThemeProvider>
     )
   }
 
