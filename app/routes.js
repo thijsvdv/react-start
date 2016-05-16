@@ -8,6 +8,7 @@ import Event from './components/Event'
 import Users from './components/Users'
 import User from './components/User'
 import About from './components/About'
+import List from './components/List'
 import Team from './components/Team'
 
 const routes = (
@@ -16,6 +17,7 @@ const routes = (
     <Route path="/about" component={About}>
       <Route path="/about/team" component={Team} />
     </Route>
+    <Route path="/list" component={List} name="list" />
     <Route path="/post" component={Post} name="post" />
     <Route path="/events" component={Events} name="events" />
     <Route path="/event/:eventid" component={Event} name="event" />
