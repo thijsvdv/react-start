@@ -15,19 +15,17 @@ const Users = ({users}) => {
     },
 
     renderUser (key) {
-      // console.log('user', this.props.users);
-      return <li key={key}><Link to={`/user/${users[key].fields.slug}`}>{users[key].fields.name} {users[key].fields.firstName}</Link></li>
+      let user = this.props.users[key].fields;
+      return <li key={key}><Link to={`/user/${user.slug}`}>{user.name} {user.firstName}</Link></li>
     },
 
     render () {
       return (
         <div className="users">
           <h1>Users</h1>
-
           <ol>
-            {Object.keys(users).map(this.renderUser.bind(this))}
+            {Object.keys(this.props.users).map(this.renderUser.bind(this))}
           </ol>
-
         </div>
       )
     }

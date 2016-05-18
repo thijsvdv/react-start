@@ -1,10 +1,8 @@
 CACHE MANIFEST
-#ver:5/15/2016, 4:55:18 PM
+#ver:5/17/2016, 10:14:33 AM
 
 CACHE:
 ../bundle.js
-../styles.css
-../.DS_Store
 ../200.html
 ../favicon.png
 ../favicon_144.png

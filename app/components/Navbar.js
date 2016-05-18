@@ -16,11 +16,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-
-// <ul role="nav">
-//   <li><Link to="/">Home</Link></li>
-//   <li><Link to="/users">Users</Link></li>
-//   <li><Link to="/events">Events</Link></li>
-//   <li><Link to="/about">About</Link></li>
-// </ul>
