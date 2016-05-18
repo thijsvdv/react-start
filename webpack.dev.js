@@ -28,7 +28,7 @@ module.exports = {
     new TransferWebpackPlugin([
       {from: 'www'},
     ]),
-    new ExtractTextPlugin('styles.css'),
+    // new ExtractTextPlugin('styles.css'),
 
     // Put it in the end to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
@@ -67,8 +67,8 @@ module.exports = {
         test: /\.css$/,
         exclude: /node_modules/,
         include: __dirname + '/app/styles',
-        // loader: 'style-loader!css-loader!postcss-loader'
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'postcss-loader')
+        loader: 'style-loader!css-loader!postcss-loader'
+        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
       }
     ]
   },

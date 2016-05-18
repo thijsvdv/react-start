@@ -2,8 +2,6 @@ var __wpo = {
   "assets": {
     "main": [
       "./bundle.js",
-      "./styles.css",
-      "./.DS_Store",
       "./200.html",
       "./favicon.png",
       "./favicon_144.png",
@@ -16,9 +14,7 @@ var __wpo = {
     "optional": []
   },
   "hashesMap": {
-    "5bd40580e9990a29de563b8632fa532e": "./bundle.js",
-    "4551578b9206859b12300cb7e2af0783": "./styles.css",
-    "a63520a86a018e8b55b247169d08e6a0": "./.DS_Store",
+    "f188f9c0bf13765b9004d0b90ea5de57": "./bundle.js",
     "c587878c2c2c09c32c301616d89a790b": "./",
     "99a686e66c84fcfe4d4f7adf356b343b": "./favicon_192.png",
     "d6d9d3f399f31fe2359afb385d3b7f97": "./favicon_144.png",
@@ -26,7 +22,7 @@ var __wpo = {
     "631b28022b70005e0c1612c1dda5bde9": "./manifest.json"
   },
   "strategy": "all",
-  "version": "5/15/2016, 4:55:18 PM",
+  "version": "5/17/2016, 10:14:33 AM",
   "name": "webpack-offline",
   "relativePaths": true
 };
